@@ -4,6 +4,7 @@ public class Notenberechenung {
 
     }
 
+    //TODO:
     public static double berechneNoten(double punkte){
         double note = 0.0;
         if(punkte<60){
