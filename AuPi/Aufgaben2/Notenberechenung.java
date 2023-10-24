@@ -11,7 +11,6 @@ public class Notenberechenung {
         System.out.println("Die Note ist hiermit: "+ note);
     }
 
-    //TODO:
     public static double berechneNoten(double punkte){
             if (punkte >= 105) return 1.0;
             else if (punkte >= 100) return 1.3;
