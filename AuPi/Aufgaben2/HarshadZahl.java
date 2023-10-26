@@ -7,6 +7,7 @@ public class HarshadZahl {
         int number = sc.nextInt();
         int summe = querSummeBerechnen(number);
         System.out.println("Die Quersummer der Zahl "+number+" ist: "+summe);
+
         for(int i=1;i<=100;i++) {
             int quersumme = querSummeBerechnen(i);
             if (quersumme!=0 && i % quersumme == 0) {

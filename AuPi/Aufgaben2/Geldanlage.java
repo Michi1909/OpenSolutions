@@ -39,6 +39,6 @@ public class Geldanlage {
         for(int i=0; i<laufzeit;i++){
             zins = zins*(1+zinssatz);
         }
-        return (kapital*zins)+bonus;
+        return Math.round((kapital*zins)+bonus);
     }
 }
