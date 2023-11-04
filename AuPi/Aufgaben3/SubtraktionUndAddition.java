@@ -50,7 +50,8 @@ public class SubtraktionUndAddition {
             }
             return c;
         }else if(a<0 && b<0){
-            for(int i=0;i<Math.abs(b);i++){
+            b=0-b;
+            for(int i=0;i<b;i++){
                 c-=(a);
             }
             return c;
