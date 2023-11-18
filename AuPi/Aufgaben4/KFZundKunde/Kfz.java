@@ -1,8 +1,12 @@
 package KFZundKunde;
 
 public class Kfz {
+    // Klassenattribute
     String kennzeichen, modell;
     int kmStand;
+    int ID;
+    int temp=0;
+    //Konstruktoren
     Kfz(String kennzeichen, String modell)
     {
         this.kennzeichen = kennzeichen;
@@ -12,7 +16,11 @@ public class Kfz {
     {
         this(kennzeichen, modell);
         this.kmStand = kmStand;
+        this.ID=temp;
+        temp++;
     }
+
+    //Set-Methoden geben nichts zurück sondern ändern nur das Attribut
     void setKennzeichen(String kennzeichen)
     {
         this.kennzeichen = kennzeichen;
@@ -21,9 +29,14 @@ public class Kfz {
     {
         this.modell = modell;
     }
+
     void setKmStand(int kmStand)
     {
         this.kmStand = kmStand;
+    }
+    //Get-Methoden geben etwas zurück
+    int getID(){
+        return this.ID;
     }
     String getKennzeichen()
     {
@@ -37,6 +50,9 @@ public class Kfz {
     {
         return this.kmStand;
 
+    }
+    String asString(Kfz kfz){
+        return "Das Kennzeichen ist: "+kfz.getKennzeichen() +", das Modell ist: "+kfz.getModell()+", der Kilometerstand ist: "+kfz.getKmStand();
     }
 
 }
