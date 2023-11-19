@@ -7,9 +7,9 @@ public class Bruch {
     int nenner = 1;
     //------------------------------------------------------------------------------
     //Kontruktor
-    Bruch(){}
+    Bruch(){this(1,1);}
     Bruch(int zaehler){
-        this.zaehler=zaehler;
+        this(zaehler,1);
     }
     Bruch(int zaehler,int nenner){
         this.zaehler=zaehler;
@@ -19,31 +19,43 @@ public class Bruch {
     //Klassenmethoden
     Bruch plus(Bruch summand)
     {
-        Bruch n = new Bruch();
-        return n;
+        int zaehler = (this.zaehler* summand.nenner)+(summand.zaehler*this.nenner);
+        int nenner = (this.nenner* summand.nenner);
+        Bruch bruch = new Bruch(zaehler,nenner);
+        return bruch;
     }
     Bruch minus(Bruch subtrahend)
     {
-       Bruch m = new Bruch();
-       return m;
+        int zaehler = (this.zaehler* subtrahend.nenner)-(subtrahend.zaehler*this.nenner);
+        int nenner = (this.nenner* subtrahend.nenner);
+        Bruch bruch = new Bruch(zaehler,nenner);
+        return bruch;
     }
     Bruch mult(Bruch faktor)
     {
-        Bruch r = new Bruch();
-        return r;
+        int zaehler = this.zaehler * faktor.zaehler;
+        int nenner = this.nenner * faktor.nenner;
+        Bruch bruch = new Bruch(zaehler,nenner);
+        return bruch;
     }
     Bruch div(Bruch divisor)
     {
-        Bruch z = new Bruch();
-        return z;
+        divisor= divisor.kehrwert();
+        int zaehler = this.zaehler * divisor.zaehler;
+        int nenner = this.nenner * divisor.nenner;
+        Bruch bruch = new Bruch(zaehler,nenner);
+        return bruch;
     }
     Bruch kehrwert()
     {
         Bruch h = new Bruch();
+        int temp= this.zaehler;
+        h.zaehler=this.nenner;
+        h.nenner=temp;
         return h;
     }
     String asString()
     {
-        return "";
+        return this.zaehler+"\n-\n"+this.nenner;
     }
 }
