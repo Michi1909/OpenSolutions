@@ -1,4 +1,4 @@
-package KFZundKunde;
+package KFZ;
 
 public class Kfz {
     // Klassenattribute

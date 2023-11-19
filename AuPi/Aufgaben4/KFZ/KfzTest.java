@@ -1,4 +1,4 @@
-package KFZundKunde;
+package KFZ;
 public class KfzTest {
     public static void main(String[] args){
         String str = "";
