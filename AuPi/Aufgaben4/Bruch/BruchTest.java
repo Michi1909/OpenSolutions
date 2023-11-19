@@ -6,6 +6,15 @@ public class BruchTest {
         Bruch bruch2 = new Bruch(4);
         Bruch bruch3 = new Bruch(4,7);
 
+        //Aufgabe c)
+        Bruch task1 = new Bruch(1,2);
+        Bruch task2 = new Bruch(1,4);
+        Bruch addition = task1.plus(task2);
+        Bruch multipl = task1.mult(task2);
+        Bruch erg = addition.minus(multipl);
+
+        System.out.println("Ergebnis ist:\n"+erg.asString());
+
         System.out.println("Bruch1 ist:\n"+bruch1.asString());
         System.out.println("Bruch2 ist:\n"+bruch2.asString());
         System.out.println("Bruch3 ist:\n"+bruch3.asString());
