@@ -12,49 +12,43 @@ public class ArrayAusgeben {
             System.out.print(feld[i]+" ");
         }
     }
-    /**
-     * Mischt zwei aufsteigend sortierte Felder in einem neuen, ebenfalls aufsteigend sortierten Feld.
-     *
-     * @param a Das erste aufsteigend sortierte Feld.
-     * @param b Das zweite aufsteigend sortierte Feld.
-     * @return Ein neues Feld, das die Werte von a und b in aufsteigender Reihenfolge enthält.
-     */
-    public static int[] mischen(int[] a, int[] b) {
-        // Neues Feld erstellen, das groß genug ist, um alle Werte von a und b zu speichern
-        int[] gemischt = new int[a.length + b.length];
 
-        int indexA = 0;  // Index zum Durchlaufen des Feldes a
-        int indexB = 0;  // Index zum Durchlaufen des Feldes b
-        int indexGemischt = 0;  // Index zum Einfügen von Werten in das gemischte Feld
+    public static int[] mischen(int[] a, int[] b) { // fuer das Ergebnis benötigt man ein Feld, in das die Elemene beider Felder hineinpassen
+        int[] ergebnis = new int[a.length + b.length];
+        // Um festzustellen, welches Element das kleinste ist,
+        // muss man die beiden ersten Elemente der beiden Felder vergleichen.
+        // Man startet also mit den Elementen an der Index position 0,
+        // und 'merkt' sich diese in den Variabel iA bzw. iB.
+        // Wurde eine Element aus a oder b in das Ergebnisfeld kopiert,
+        // muss man fuer dieses Feld das naechste Element betrachten, also
+        // den entsprechenden Index (iA bzw. iB) um 1 erhöhen
+        // Zwei Sonderfälle: Ist eines der Felder a oder b schon ganz abgearbeitet,
+        // braucht man nicht mehr zu vergleichen und die restlichen Elemente des anderen Felds
+        // koennen direkt das Ergebnisfeld kopiert werden
 
-        // Solange noch Werte in beiden Feldern vorhanden sind
-        while (indexA < a.length && indexB < b.length) {
-            // Wenn der aktuelle Wert in a kleiner oder gleich dem aktuellen Wert in b ist
-            if (a[indexA] <= b[indexB]) {
-                gemischt[indexGemischt] = a[indexA];  // Füge den Wert von a zum gemischten Feld hinzu
-                indexA++;  // Gehe zum nächsten Wert in a
+        int iA = 0; // zu behandelnder Index fuer Feld a
+        int iB = 0; // zu behandelnder Index fuer Feld b
+        for (int i = 0; i < a.length + b.length; i++)
+        // i steht fuer die Position im Feld ergebnis, fuer die der nun einzufuegende Wert bestimmt werden muss
+        {
+            if (iA >= a.length) // 1. Sonderfall: Feld a ist schon leer, nur b-Werte kommt infrage
+            {
+                ergebnis[i] = b[iB];
+                iB++;
+            } else if (iB >= b.length) // 2. Sonderfall: Feld b ist schon leer, nur a-Werte kommen infrage
+            {
+                ergebnis[i] = a[iA];
+                iA++;
+            } else if (a[iA] < b[iB]) // a-Wert kleiner b-Wert
+            {
+                ergebnis[i] = a[iA];
+                iA++;
             } else {
-                gemischt[indexGemischt] = b[indexB];  // Füge den Wert von b zum gemischten Feld hinzu
-                indexB++;  // Gehe zum nächsten Wert in b
+                ergebnis[i] = b[iB]; // b-Wert kleiner oder gleich a-Wert
+                iB++;
             }
-            indexGemischt++;  // Gehe zum nächsten freien Platz im gemischten Feld
         }
-
-        // Falls es noch verbleibende Elemente im Array a gibt, füge sie zum Ergebnis hinzu
-        while (indexA < a.length) {
-            gemischt[indexGemischt] = a[indexA];
-            indexA++;
-            indexGemischt++;
-        }
-
-        // Falls es noch verbleibende Elemente im Array b gibt, füge sie zum Ergebnis hinzu
-        while (indexB < b.length) {
-            gemischt[indexGemischt] = b[indexB];
-            indexB++;
-            indexGemischt++;
-        }
-
-        return gemischt;
+        return ergebnis;
     }
 
 }

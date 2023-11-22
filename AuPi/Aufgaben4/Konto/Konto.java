@@ -34,7 +34,7 @@ public class Konto {
         }
         boolean sicheresUeberweisen(Konto ktoNr, double betrag){
 
-            if(sicheresAuszahlen(betrag)){
+            if(this.sicheresAuszahlen(betrag)){
                 ktoNr.einzahlen(betrag);
                 return true;
             }
