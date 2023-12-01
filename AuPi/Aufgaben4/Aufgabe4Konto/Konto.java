@@ -1,4 +1,4 @@
-package Konto;
+package Aufgabe4Konto;
 
 public class Konto {
         int ktoNr;

@@ -1,4 +1,4 @@
-package Konto;
+package Aufgabe4Konto;
 
 public class KontoTest {
     public static void main(String[]args){

@@ -25,10 +25,7 @@ public class Kfz{
             return true;
         } else return false;
     }
-    void zurueckgeben()
-    {
-        vermietetAn = -1;
-    }
+    void zurueckgeben(){vermietetAn = -1;}
     public long getAnzahlKfz(){return this.anzahlKfz;}
     public long getAlleVermietungen(){return this.alleVermietungen;}
     public  long getMeineVermietungen(){return this.meineVermietungen;}
