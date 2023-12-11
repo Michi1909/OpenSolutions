@@ -7,14 +7,27 @@ public class Person {
     public boolean addKonto(Konto konto){
         boolean eingefuegt= false;
         if(anzkonten<this.konto.length){
-            this.konto[this.anzkonten]=konto;
-            this.anzkonten++;
-            eingefuegt=true;
+            for(int i = 0; i< this.konto.length;i++){
+                if(this.konto[i]==null) {
+                    this.konto[i] = konto;
+                    this.anzkonten++;
+                    eingefuegt = true;
+                }
+            }
         }
         return eingefuegt;
     }
 
-
+    public Konto removeKonto(int pos)
+    {
+        Konto entferntesKonto = null;
+        if (pos >= 0 && pos < anzkonten){
+            entferntesKonto = konto[pos];
+            konto[pos] = null;
+            anzkonten--;
+        }
+        return entferntesKonto;
+    }
 
 
 }
