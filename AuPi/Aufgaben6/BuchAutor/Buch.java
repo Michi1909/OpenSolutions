@@ -77,7 +77,7 @@ public class Buch
     // ist bereits implementiert
     public String getBuchAsString()
     {
-        return autor + ": " + titel + " (" + inventarnummer + ")" + " ISBN: "
+        return autor.asString() + ": " + titel + " (" + inventarnummer + ")" + " ISBN: "
                 + isbnNummer;
     }
 

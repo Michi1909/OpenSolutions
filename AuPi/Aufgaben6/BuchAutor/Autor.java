@@ -19,6 +19,6 @@ public class Autor {
         return new Datum(this.geborenAm);
     }
     String asString(){
-        return "Autor: "+ this.getVorname()+", "+this.getNachname()+" geboren am: "+ this.getGeborenAm();
+        return "Autor: "+ this.getVorname()+", "+this.getNachname()+" geboren am: "+ this.geborenAm.asString();
     }
 }
