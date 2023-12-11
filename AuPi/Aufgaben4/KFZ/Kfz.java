@@ -7,6 +7,9 @@ public class Kfz {
     int ID;
     int temp=0;
     //Konstruktoren
+    Kfz(){
+        this(" "," ",0);
+    }
     Kfz(String kennzeichen, String modell)
     {
         this.kennzeichen = kennzeichen;
@@ -51,8 +54,8 @@ public class Kfz {
         return this.kmStand;
 
     }
-    String asString(Kfz kfz){
-        return "Das Kennzeichen ist: "+kfz.getKennzeichen() +", das Modell ist: "+kfz.getModell()+", der Kilometerstand ist: "+kfz.getKmStand();
+    String asString(){
+        return "Das Kennzeichen ist: "+this.getKennzeichen() +", das Modell ist: "+this.getModell()+", der Kilometerstand ist: "+this.getKmStand();
     }
 
 }

@@ -20,7 +20,7 @@ public class Kfz{
         if (vermietetAn == -1)
         {
             vermietetAn = eineKundenNummer;
-            this.alleVermietungen++;
+            alleVermietungen++;
             this.meineVermietungen++;
             return true;
         } else return false;
