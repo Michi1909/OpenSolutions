@@ -6,14 +6,14 @@ public class AuftragsContainer {
     public int gibAnzahlAuftraege(){
         return anzahlAuftraege;
     }
-    public void auftragHinzufuegen(Auftrag a){
+    public void auftragHinzufuegen(Auftrag auftrag){
 
         if (anzahlAuftraege == auftraege.length)
         {
             containerVergroessern();
         }
 
-            auftraege[anzahlAuftraege] = a;
+            auftraege[anzahlAuftraege] = auftrag;
             anzahlAuftraege++;
 
     }
@@ -45,9 +45,9 @@ public class AuftragsContainer {
         return position-1;
     }
     public String asString(){
-        String str="";
-        for(int i=0;i<this.auftraege.length;i++){
-            str += this.auftraege[i].asString();
+        String str = "";
+        for(int i=0;i<anzahlAuftraege;i++){
+            str += auftraege[i].asString();
         }
         return str;
     }

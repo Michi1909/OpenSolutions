@@ -6,14 +6,12 @@ public class AuftragsverwaltungTest {
     public static void main(String[]args){
         Scanner sc = new Scanner(System.in);
         boolean tmp = true;
-        //AuftragsContainer auftragVerwaltung = new AuftragsContainer();
-        Auftraggeber auftraggeber;
         System.out.println("Bitte geben Sie den Namen der Firma an: ");
         String firmenname= sc.next();
-        auftraggeber = new Auftraggeber(firmenname);
-       // int count = 0;
-        //while(tmp){
-            //if(count<=3){
+        Auftraggeber auftraggeber = new Auftraggeber(firmenname);
+        int count = 0;
+        while(tmp){
+            if(count<=3){
                 System.out.println("Geben Sie bitte eine Auftragsummer ein:");
                 int auftragsnummer= sc.nextInt();
                 System.out.println("Geben Sie bitte einen Grund für die Arbeit an:");
@@ -26,9 +24,9 @@ public class AuftragsverwaltungTest {
                 double auftragsvolumen= sc.nextDouble();
                 Auftrag auftrag = new Auftrag(auftragsnummer,grund,stundenanzahl,stundensatz,auftragsvolumen);
                 auftraggeber.erteiltAuftrag(auftrag);
-                //count++;
-           // }else{tmp = false;}
-       // }
+                count++;
+            }else{tmp = false;}
+        }
         System.out.println(auftraggeber.asString());
 
     }

@@ -2,10 +2,10 @@ package Auftraege;
 
 public class Auftrag {
     private int nummer;
-    String grund;
-    int stundenAnzahl;
-    double stundenSatz;
-    double auftragVolumen;
+    private String grund;
+    private int stundenAnzahl;
+    private double stundenSatz;
+    private double auftragVolumen;
     public Auftrag(int auftragsnummer,String grund, int stundenAnzahl, double stundenSatz, double auftragVolumen){
         this.nummer=auftragsnummer;
         this.grund=grund;
