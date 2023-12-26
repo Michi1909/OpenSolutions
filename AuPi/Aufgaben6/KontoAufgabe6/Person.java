@@ -28,6 +28,25 @@ public class Person {
         }
         return entferntesKonto;
     }
+    public int searchKonto(int eineKtoNr)
+    {
+        int pos = -1; // (noch) nichts gefunden
+        int i = 0;
+        while (i < anzkonten) {
+            if (konto[i].getKtoNr() == eineKtoNr){
+                pos = i; // Position merken
+                i = anzkonten; // Abbruch erzwingen
+            }else i++;
+        }
+        return pos;
+    }
 
+    public Konto getKonto(int pos)
+    {
+        Konto erg = null;
+        if (pos >= 0 && pos < anzkonten && konto[pos]!=null)
+            erg = konto[pos];
+        return erg;
+    }
 
 }
