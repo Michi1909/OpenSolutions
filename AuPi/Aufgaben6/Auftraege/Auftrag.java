@@ -23,7 +23,7 @@ public class Auftrag {
         return this.auftragVolumen;
     }
     public String asString(){
-        return "\nAuftrasnummer ist: "+nummer+"\nStundenanzahl ist: "+ stundenAnzahl+ "\nStundensatz ist: "+stundenSatz+"\nDas Auftragsvolumen ist: "+auftragVolumen;
+        return "\nAuftragsnummer ist: "+nummer+"\nStundenanzahl ist: "+ stundenAnzahl+ "\nStundensatz ist: "+stundenSatz+"\nDas Auftragsvolumen ist: "+auftragVolumen;
     }
 
 }
